@@ -6,20 +6,32 @@
     color: white;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     height: 80px;
+    text-align: center;
+    width: 100%;
     
-
 }
 
 .main-container {
     background-color: #ffe4e1;
     font-family: Arial, Helvetica, sans-serif;
     color: #2e8b57;
-    
-    
+    margin-bottom: 10px;
 }
 
 .card-body {
     float: left;
     background-color: #20b2aa;
     color: white;
+    margin-bottom: 10px;
 }
+
+.card1 {
+    background-color: aquamarine;
+    color: gray;
+    margin-bottom: 10px;
+}
+
+.card2 {
+    margin-bottom: 10px;
+}
+
