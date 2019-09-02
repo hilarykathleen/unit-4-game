@@ -5,44 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Crystal Collector Game</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 </head>
 <body>
 
 <div class='container'>
     
     <div class='header'>
-        <h1>Crystals Collector!</h1>
+        <div class='row'>
+            <div class='col-4'>
+                <h1>Crystal Collector!</h1>
+            </div>
+        </div>
     </div>
 
     <div class='card'>
-        <div class='card-body'>
-            <p>
-                You will be given a random number at the start of the game.
-            </p>
-            <p>
-                There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score.
-            </p>
-            <p>
-                You win the game by matching your total score to random number, you lose the game if your total score goes above the random number.
-
-            </p>
-            <p>
-                The value of each crystal is hidden from you until you click on it.
-            </p>
-            <p>
-                Each time when the game starts, the game will change the values of each crystal.
-            </p>
+        <div class='main-container'>
+            <div class='row'>
+                <div class='col-6'>
+                     <p>
+                        You will be given a random number at the start of the game.
+                    </p>
+                     <p>
+                        There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score.
+                    </p>
+                    <p>
+                        You win the game by matching your total score to random number, you lose the game if your total score goes above the random number.
+                    </p>
+                    <p>
+                        The value of each crystal is hidden from you until you click on it.
+                    </p>
+                    <p>
+                        Each time when the game starts, the game will change the values of each crystal.
+                    </p>
+                </div>
+            </div>
         </div>
     </div>
 
     <div class='card'>
         <div class='row'>
             <div class='col-2'>
-                random number
+                <p id='random-number-text'></p> 
             </div>
             <div class='col-1'>
-                game counter
+                <p id='wins-text'>Wins:</p>
+                <p id='losses-text'>Losses:</p>
             </div>
         </div>
 
@@ -51,16 +62,16 @@
     <div class='card'>
         <div class='row'>
             <div class='col-sm-1'>
-                gem 1
+                <img src="assets/images/101-1016794_new-images-2018-free-download-diamond-clipart-black.png" id="green" width="100px" height="100px" alt="green">
             </div>
             <div class='col-sm-1'>
-                gem 2
+                <img src="assets/images/112-1122700_gems-clipart-blue-diamond-steven-universe-blue-diamond.png" id="blue" width="100px" height="100px" alt="blue">
             </div>
             <div class='col-sm-1'>
-                gem 3
+                <img src="assets/images/15-157086_diamonds-clipart-yellow-diamond-steven-universe-yellow-diamond.png" id="yellow" width="100px" height="100px" alt="yellow">
             </div>
             <div class='col-sm-1'>
-                gem 4
+                <img src="assets/images/images.jpeg" id="red" width="100px" height="100px" alt="red">
             </div>
         </div>
     </div>
@@ -68,20 +79,21 @@
     <div class='card card-default'>
         <div class='card-body'>
             <p>
-                Your total score is:
+            Your total score is:
             </p>
         </div>
     </div>
 
     <div class='card card-default'>
         <div class='card-body'>
-            player's score
+            <p id="players-score-text"></p>
         </div>
 
     </div>
 
-
 </div>
+
+<script src="assets/javascript/game.js"></script>
     
 </body>
 </html>
