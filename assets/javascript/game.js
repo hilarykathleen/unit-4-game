@@ -4,9 +4,6 @@ var randomNumber = Math.floor(Math.random()*101+19);
 $('#random-number-text').text(randomNumber);
 console.log(randomNumber);
 
-
-
-
 //Random numbers for crystals between 1 and 12
 var crystal1 = Math.floor(Math.random()*11+1);
 console.log(crystal1);
@@ -24,14 +21,7 @@ var userScore = 0;
 var winCounter = 0;
 var lossCounter = 0;
 
-var randomNumberText = document.getElementById('random-number-text');
-var winsText = document.getElementById('wins-text');
-var lossesText = document.getElementById('losses-text');
-
 // FUNCTIONS
-
-// $('#wins-text').text(winsText);
-// $('#losses-text').text(lossesText);
 
 $(document).ready(function(){
     $('#wins-text').text(winCounter);
@@ -44,81 +34,97 @@ $("#green").on("click", function() {
     userScore += crystal1;
     $('#players-score-text').text(userScore);
     console.log(userScore);
-    if (userScore === randomNumber) {
+
+    if (userScore == randomNumber) {
         winCounter++;
         $('#wins-text').text(winCounter);
         console.log("winCounter");
-    } else { (userScore < randomNumber);  
+        reset()
+    }
+    else if (userScore > randomNumber) {
         lossCounter++;
         $('#losses-text').text(lossCounter);
-    
-    }
+        reset()
+        }
 })
 
 $( "#blue" ).click(function() {
     userScore += crystal2;
     $('#players-score-text').text(userScore);
     console.log(userScore);
-    if (userScore === randomNumber) {
+
+    if (userScore == randomNumber) {
         winCounter++;
         $('#wins-text').text(winCounter);
         console.log("winCounter");
-    } else { (userScore > randomNumber);
+        reset()
+    }
+    else if (userScore > randomNumber) {
         lossCounter++;
         $('#losses-text').text(lossCounter);
-        console.log("addLoss")
-    
-    }
+        reset()
+        }
 })
+
 
 $( "#yellow" ).click(function() {
     userScore += crystal3;
     $('#players-score-text').text(userScore);
     console.log(userScore);
-    if (userScore === randomNumber) {
+
+    if (userScore == randomNumber) {
         winCounter++;
         $('#wins-text').text(winCounter);
         console.log("winCounter");
-    } else { (userScore > randomNumber);  
+        reset()
+    }
+    else if (userScore > randomNumber) {
         lossCounter++;
         $('#losses-text').text(lossCounter);
-    
-    }
+        reset()
+        }
 })
+
 
 $( "#red" ).click(function() {
     userScore += crystal4;
     $('#players-score-text').text(userScore);
     console.log(userScore);
-    if (userScore === randomNumber) {
+
+    if (userScore == randomNumber) {
         winCounter++;
         $('#wins-text').text(winCounter);
         console.log("winCounter");
-    } else { (userScore > randomNumber);
+        reset()
+    }
+    else if (userScore > randomNumber) {
         lossCounter++;
         $('#losses-text').text(lossCounter);
-    
-    }
+        reset()
+        }
 })
 
-   
-// MAIN PROCESS
+function reset () {
 
-// if (userScore === randomNumber) {
-//     winCounter++;
-//     $('#wins-text').text(winCounter);
-//     console.log("winCounter");
-// }
+userScore = 0;
+$('#players-score-text').text(userScore);
+var randomNumber = Math.floor(Math.random()*101+19);
+$('#random-number-text').text(randomNumber);
+console.log(randomNumber);
 
-// if (userScore > randomNumber) { 
-//     lossCounter++;
-//     $('#loss-text').text(lossCounter);
+//Random numbers for crystals between 1 and 12
+crystal1 = Math.floor(Math.random()*11+1);
+console.log(crystal1);
+crystal2 = Math.floor(Math.random()*11+1);
+console.log(crystal2);
+crystal3 = Math.floor(Math.random()*11+1);
+console.log(crystal3);
+crystal4 = Math.floor(Math.random()*11+1);
+console.log(crystal4);
 
-// }
-
-// winsCounter.textContent = "wins: " + winsText;
-// lossesText.textContent = "losses: " + lossesText;
-   
+}
+    
+    
 
 });
 
