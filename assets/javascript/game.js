@@ -24,11 +24,14 @@ var userScore = 0;
 var winCounter = 0;
 var lossCounter = 0;
 
-// var randomNumberText = document.getElementById('random-number-text');
-// var winsText = document.getElementById('wins-text');
-// var lossesText = document.getElementById('losses-text');
+var randomNumberText = document.getElementById('random-number-text');
+var winsText = document.getElementById('wins-text');
+var lossesText = document.getElementById('losses-text');
 
 // FUNCTIONS
+
+// $('#wins-text').text(winsText);
+// $('#losses-text').text(lossesText);
 
 $(document).ready(function(){
     $('#wins-text').text(winCounter);
@@ -41,41 +44,80 @@ $("#green").on("click", function() {
     userScore += crystal1;
     $('#players-score-text').text(userScore);
     console.log(userScore);
+    if (userScore === randomNumber) {
+        winCounter++;
+        $('#wins-text').text(winCounter);
+        console.log("winCounter");
+    } else { (userScore < randomNumber);  
+        lossCounter++;
+        $('#losses-text').text(lossCounter);
+    
+    }
 })
 
 $( "#blue" ).click(function() {
     userScore += crystal2;
     $('#players-score-text').text(userScore);
     console.log(userScore);
+    if (userScore === randomNumber) {
+        winCounter++;
+        $('#wins-text').text(winCounter);
+        console.log("winCounter");
+    } else { (userScore > randomNumber);
+        lossCounter++;
+        $('#losses-text').text(lossCounter);
+        console.log("addLoss")
+    
+    }
 })
 
 $( "#yellow" ).click(function() {
     userScore += crystal3;
     $('#players-score-text').text(userScore);
     console.log(userScore);
+    if (userScore === randomNumber) {
+        winCounter++;
+        $('#wins-text').text(winCounter);
+        console.log("winCounter");
+    } else { (userScore > randomNumber);  
+        lossCounter++;
+        $('#losses-text').text(lossCounter);
+    
+    }
 })
 
 $( "#red" ).click(function() {
     userScore += crystal4;
     $('#players-score-text').text(userScore);
     console.log(userScore);
+    if (userScore === randomNumber) {
+        winCounter++;
+        $('#wins-text').text(winCounter);
+        console.log("winCounter");
+    } else { (userScore > randomNumber);
+        lossCounter++;
+        $('#losses-text').text(lossCounter);
+    
+    }
 })
 
-    // Reset
-    
-    
-
-
+   
 // MAIN PROCESS
 
-if (userScore === randomNumber) {
-    winCounter++;
-    $('#wins-text').text(winCounter);
-    console.log("winCounter");
+// if (userScore === randomNumber) {
+//     winCounter++;
+//     $('#wins-text').text(winCounter);
+//     console.log("winCounter");
+// }
 
-} else { 
+// if (userScore > randomNumber) { 
+//     lossCounter++;
+//     $('#loss-text').text(lossCounter);
 
-}
+// }
+
+// winsCounter.textContent = "wins: " + winsText;
+// lossesText.textContent = "losses: " + lossesText;
    
 
 });
